@@ -204,5 +204,10 @@ namespace StudentInformationSystemFull
 			
 			return yearValue >= 1900 && yearValue <= DateTime.Now.Year + 10;
 		}
-	}
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+    }
 }

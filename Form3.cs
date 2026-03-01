@@ -281,5 +281,9 @@ namespace StudentInformationSystemFull
 			return Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
 		}
 
-	}
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
