@@ -266,11 +266,15 @@ namespace StudentInformationSystemFull
 				errorProvider1.SetError(txtGuardianEmail, "Required");
 				valid = false;
 			}
-			else if (!IsValidEmail(txtGuardianEmail.Text))
+			if (!IsValidEmail(txtGuardianEmail.Text))
 			{
 				errorProvider1.SetError(txtGuardianEmail, "Invalid Email");
 				valid = false;
 			}
+
+			if (!IsValidMobile(txtGuardianContact.Text))
+			{ errorProvider1.SetError(txtGuardianContact, "Must be 11 digits"); 
+				valid = false; }
 
 			return valid;
 		}
@@ -281,7 +285,11 @@ namespace StudentInformationSystemFull
 			return Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
 		}
 
-        private void label15_Click(object sender, EventArgs e)
+		private bool IsValidMobile(string number)
+		{
+			return Regex.IsMatch(number, @"^[0-9]{11}$");
+		}
+		private void label15_Click(object sender, EventArgs e)
         {
 
         }

@@ -120,8 +120,8 @@ namespace StudentInformationSystemFull
 		private void LoadGrid()
 		{
 			dgvStudents.Rows.Clear();
-
-			foreach (var s in studentRecords)
+foreach (var s in studentRecords)
+			
 			{
 				dgvStudents.Rows.Add(
 					s.StudentNumber,
@@ -353,7 +353,8 @@ namespace StudentInformationSystemFull
 
 		private void dgvStudents_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
-			if (e.RowIndex < 0 || e.RowIndex >= studentRecords.Count) return;
+			if (e.RowIndex < 0 || e.RowIndex >= studentRecords.Count) 
+				return;
 
 			selectedRowIndex = e.RowIndex;
 			StudentData selected = studentRecords[selectedRowIndex];
@@ -468,41 +469,65 @@ namespace StudentInformationSystemFull
 			bool valid = true;
 			errorProvider1.Clear();
 
-			if (txtFirstName.Text.Trim() == "")
-			{ errorProvider1.SetError(txtFirstName, "Required"); valid = false; }
+			if (txtFirstName.Text == "")
+			{ errorProvider1.SetError(txtFirstName, "Required"); 
+				valid = false; 
+			}
 
 			if (txtMiddleName.Text.Trim() == "")
-			{ errorProvider1.SetError(txtMiddleName, "Required"); valid = false; }
+			{ errorProvider1.SetError(txtMiddleName, "Required");
+				valid = false; 
+			}
 
 			if (txtLastName.Text.Trim() == "")
-			{ errorProvider1.SetError(txtLastName, "Required"); valid = false; }
+			{ errorProvider1.SetError(txtLastName, "Required"); 
+				valid = false; 
+			}
 
 			if (txtStudentNumber.Text.Trim() == "")
-			{ errorProvider1.SetError(txtStudentNumber, "Required"); valid = false; }
+			{ errorProvider1.SetError(txtStudentNumber, "Required"); 
+				valid = false; 
+			}
 
 			if (numAge.Value < 15 || numAge.Value > 50)
-			{ errorProvider1.SetError(numAge, "Age must be 15 to 50"); valid = false; }
+			{ errorProvider1.SetError(numAge, "Age must be 15 to 50"); 
+				valid = false; 
+			}
 
 			if (cboCivilStatus.SelectedIndex == -1)
-			{ errorProvider1.SetError(cboCivilStatus, "Required"); valid = false; }
+			{ errorProvider1.SetError(cboCivilStatus, "Required"); 
+				valid = false; 
+			}
 
 			if (!rbMale.Checked && !rbFemale.Checked)
-			{ errorProvider1.SetError(rbMale, "Select Gender"); valid = false; }
+			{ errorProvider1.SetError(rbMale, "Select Gender"); 
+				valid = false; 
+			}
 
 			if (txtReligion.Text.Trim() == "")
-			{ errorProvider1.SetError(txtReligion, "Required"); valid = false; }
+			{ errorProvider1.SetError(txtReligion, "Required"); 
+				valid = false; 
+			}
 
 			if (txtPlaceOfBirth.Text.Trim() == "")
-			{ errorProvider1.SetError(txtPlaceOfBirth, "Required"); valid = false; }
+			{ errorProvider1.SetError(txtPlaceOfBirth, "Required"); 
+				valid = false;
+			}
 
 			if (!IsValidEmail(txtEmail.Text))
-			{ errorProvider1.SetError(txtEmail, "Invalid Email"); valid = false; }
+			{ errorProvider1.SetError(txtEmail, "Invalid Email"); 
+				valid = false; 
+			}
 
 			if (!IsValidMobile(txtMobileNumber.Text))
-			{ errorProvider1.SetError(txtMobileNumber, "Must be 11 digits"); valid = false; }
+			{ errorProvider1.SetError(txtMobileNumber, "Must be 11 digits"); 
+				valid = false; 
+			}
 
 			if (picStudent.Image == null)
-			{ errorProvider1.SetError(picStudent, "Upload Image"); valid = false; }
+			{ errorProvider1.SetError(picStudent, "Upload Image"); 
+				valid = false; 
+			}
 
 			return valid;
 		}
