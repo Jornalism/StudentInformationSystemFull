@@ -21,46 +21,42 @@ namespace StudentInformationSystemFull
 			student = s;
 		}
 
-		
-
 		private void Form4_Load(object sender, EventArgs e)
 		{
+			if (student != null)
+			{
+				cboStudentType.Text = student.StudentType;
+				txtLearnersRefNo.Text = student.LearnersRefNo;
+				cboSchoolClassification.Text = student.SchoolClassification;
 
+				txtLastSchool.Text = student.LastSchool;
+				txtYearGraduated.Text = student.YearGraduated;
+				cboStrand.Text = student.Strand;
+
+				txtSchoolStreet.Text = student.SchoolStreet;
+				txtSchoolCity.Text = student.SchoolCity;
+				txtSchoolProvince.Text = student.SchoolProvince;
+
+				cboProgramFirstChoice.Text = student.ProgramFirstChoice;
+				cboProgramSecondChoice.Text = student.ProgramSecondChoice;
+			}
 		}
 
-		private void btnSubmit_Click(object sender, EventArgs e)
+		private void btnBack_Click(object sender, EventArgs e)
 		{
-
-			if (!ValidateForm4())
-				return;
-
 			student.StudentType = cboStudentType.Text;
 			student.LearnersRefNo = txtLearnersRefNo.Text;
+			student.SchoolClassification = cboSchoolClassification.Text;
 			student.LastSchool = txtLastSchool.Text;
+			student.YearGraduated = txtYearGraduated.Text;
+			student.Strand = cboStrand.Text;
+			student.SchoolStreet = txtSchoolStreet.Text;
+			student.SchoolCity = txtSchoolCity.Text;
+			student.SchoolProvince = txtSchoolProvince.Text;
 			student.ProgramFirstChoice = cboProgramFirstChoice.Text;
 			student.ProgramSecondChoice = cboProgramSecondChoice.Text;
 
-			DialogResult result = MessageBox.Show(
-				"Do you want to view the student information?",
-				"Confirmation",
-				MessageBoxButtons.YesNo,
-				MessageBoxIcon.Question);
-
-			if (result == DialogResult.Yes)
-			{
-				Form5 f5 = new Form5(student);
-				f5.Show();
-				this.Hide();
-			}
-			else
-			{
-				this.Close();
-			}
-			
-		}
-		private void btnBack_Click(object sender, EventArgs e)
-		{
-			Form3 f3 = new Form3(student); 
+			Form3 f3 = new Form3(student);
 			f3.Show();
 			this.Close();
 		}
@@ -82,13 +78,7 @@ namespace StudentInformationSystemFull
 			}
 		}
 
-		private void txtYearGraduated_KeyPress(object sender, KeyPressEventArgs e)
-		{
-			if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
-			{
-				e.Handled = true;
-			}
-		}
+		
 
 		private void txtSchoolStreet_KeyPress(object sender, KeyPressEventArgs e)
 		{
@@ -114,100 +104,31 @@ namespace StudentInformationSystemFull
 			}
 		}
 
-		//VALIDATION
-
-		private bool ValidateForm4()
-		{
-			bool valid = true;
-			errorProvider1.Clear();
-
-			if (cboStudentType.SelectedIndex == -1)
-			{
-				errorProvider1.SetError(cboStudentType, "Required");
-				valid = false;
-			}
-
-			if (txtLearnersRefNo.Text.Trim() == "")
-			{
-				errorProvider1.SetError(txtLearnersRefNo, "Required");
-				valid = false;
-			}
-
-			if (cboSchoolClassification.SelectedIndex == -1)
-			{
-				errorProvider1.SetError(cboSchoolClassification, "Required");
-				valid = false;
-			}
-
-			if (txtLastSchool.Text.Trim() == "")
-			{
-				errorProvider1.SetError(txtLastSchool, "Required");
-				valid = false;
-			}
-
-			if (txtYearGraduated.Text.Trim() == "")
-			{
-				errorProvider1.SetError(txtYearGraduated, "Required");
-				valid = false;
-			}
-			else if (!IsValidYear(txtYearGraduated.Text))
-			{
-				errorProvider1.SetError(txtYearGraduated, "Enter 4-digit year");
-				valid = false;
-			}
-
-			if (cboStrand.SelectedIndex == -1)
-			{
-				errorProvider1.SetError(cboStrand, "Required");
-				valid = false;
-			}
-
-			if (txtSchoolStreet.Text.Trim() == "")
-			{
-				errorProvider1.SetError(txtSchoolStreet, "Required");
-				valid = false;
-			}
-
-			if (txtSchoolCity.Text.Trim() == "")
-			{
-				errorProvider1.SetError(txtSchoolCity, "Required");
-				valid = false;
-			}
-
-			if (txtSchoolProvince.Text.Trim() == "")
-			{
-				errorProvider1.SetError(txtSchoolProvince, "Required");
-				valid = false;
-			}
-
-			if (cboProgramFirstChoice.SelectedIndex == -1)
-			{
-				errorProvider1.SetError(cboProgramFirstChoice, "Required");
-				valid = false;
-			}
-
-			if (cboProgramSecondChoice.SelectedIndex == -1)
-			{
-				errorProvider1.SetError(cboProgramSecondChoice, "Required");
-				valid = false;
-			}
-
-			return valid;
-		}
-		private bool IsValidYear(string year)
-		{
-			if (year.Length != 4)
-				return false;
-			
-			if (!int.TryParse(year, out int yearValue))
-				return false;
-			
-			return yearValue >= 1900 && yearValue <= DateTime.Now.Year + 10;
-		}
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-
+			//Removed
         }
-    }
+
+		private void btnConfirm_Click(object sender, EventArgs e)
+		{
+			student.StudentType = cboStudentType.Text;
+			student.LearnersRefNo = txtLearnersRefNo.Text;
+			student.SchoolClassification = cboSchoolClassification.Text;
+			student.LastSchool = txtLastSchool.Text;
+			student.YearGraduated = txtYearGraduated.Text;
+			student.Strand = cboStrand.Text;
+			student.SchoolStreet = txtSchoolStreet.Text;
+			student.SchoolCity = txtSchoolCity.Text;
+			student.SchoolProvince = txtSchoolProvince.Text;
+			student.ProgramFirstChoice = cboProgramFirstChoice.Text;
+			student.ProgramSecondChoice = cboProgramSecondChoice.Text;
+
+			// Mark that the user completed all 4 forms
+			student.CompletedAllForms = true;
+
+			Form1 f1 = new Form1(student);
+			f1.Show();
+			this.Close();
+		}
+	}
 }

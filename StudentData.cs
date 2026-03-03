@@ -66,6 +66,9 @@ namespace StudentInformationSystemFull
 
 		public string ProgramFirstChoice;
 		public string ProgramSecondChoice;
+
+		// FLAG — true when user completed all 4 forms
+		public bool CompletedAllForms;
 	}
 }
 
