@@ -23,6 +23,13 @@ namespace StudentInformationSystemFull
 
 		private void Form4_Load(object sender, EventArgs e)
 		{
+			// Disable copy/paste/right-click for restricted fields
+			txtLearnersRefNo.ShortcutsEnabled = false;
+			txtLastSchool.ShortcutsEnabled = false;
+			txtSchoolStreet.ShortcutsEnabled = false;
+			txtSchoolCity.ShortcutsEnabled = false;
+			txtSchoolProvince.ShortcutsEnabled = false;
+
 			if (student != null)
 			{
 				cboStudentType.Text = student.StudentType;

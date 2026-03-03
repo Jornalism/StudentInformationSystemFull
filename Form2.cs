@@ -24,6 +24,10 @@ namespace StudentInformationSystemFull
 
 		private void Form2_Load(object sender, EventArgs e)
 		{
+			// Disable copy/paste/right-click for restricted fields
+			txtHouseStreet.ShortcutsEnabled = false;
+			txtZipCode.ShortcutsEnabled = false;
+
 			if (student != null)
 			{
 				cboRegion.Text = student.Region;

@@ -23,6 +23,19 @@ namespace StudentInformationSystemFull
 
 		private void Form3_Load(object sender, EventArgs e)
 		{
+			// Disable copy/paste/right-click for restricted fields
+			txtFatherFirstName.ShortcutsEnabled = false;
+			txtFatherMiddleName.ShortcutsEnabled = false;
+			txtFatherLastName.ShortcutsEnabled = false;
+			txtMotherFirstName.ShortcutsEnabled = false;
+			txtMotherMiddleName.ShortcutsEnabled = false;
+			txtMotherLastName.ShortcutsEnabled = false;
+			txtGuardianFirstName.ShortcutsEnabled = false;
+			txtGuardianMiddleName.ShortcutsEnabled = false;
+			txtGuardianLastName.ShortcutsEnabled = false;
+			txtGuardianRelationship.ShortcutsEnabled = false;
+			txtGuardianContact.ShortcutsEnabled = false;
+
 			if (student != null)
 			{
 				txtFatherFirstName.Text = student.FatherFirstName;
@@ -193,75 +206,75 @@ namespace StudentInformationSystemFull
 			errorProvider1.Clear();
 
 			// FATHER
-			if (txtFatherFirstName.Text.Trim() == "")
+			if (txtFatherFirstName.Text == "")
 			{
 				errorProvider1.SetError(txtFatherFirstName, "Required");
 				valid = false;
 			}
 
-			if (txtFatherMiddleName.Text.Trim() == "")
+			if (txtFatherMiddleName.Text == "")
 			{
 				errorProvider1.SetError(txtFatherMiddleName, "Required");
 				valid = false;
 			}
 
-			if (txtFatherLastName.Text.Trim() == "")
+			if (txtFatherLastName.Text == "")
 			{
 				errorProvider1.SetError(txtFatherLastName, "Required");
 				valid = false;
 			}
 
 			// MOTHER
-			if (txtMotherFirstName.Text.Trim() == "")
+			if (txtMotherFirstName.Text == "")
 			{
 				errorProvider1.SetError(txtMotherFirstName, "Required");
 				valid = false;
 			}
 
-			if (txtMotherMiddleName.Text.Trim() == "")
+			if (txtMotherMiddleName.Text == "")
 			{
 				errorProvider1.SetError(txtMotherMiddleName, "Required");
 				valid = false;
 			}
 
-			if (txtMotherLastName.Text.Trim() == "")
+			if (txtMotherLastName.Text == "")
 			{
 				errorProvider1.SetError(txtMotherLastName, "Required");
 				valid = false;
 			}
 
 			// GUARDIAN
-			if (txtGuardianFirstName.Text.Trim() == "")
+			if (txtGuardianFirstName.Text == "")
 			{
 				errorProvider1.SetError(txtGuardianFirstName, "Required");
 				valid = false;
 			}
 
-			if (txtGuardianMiddleName.Text.Trim() == "")
+			if (txtGuardianMiddleName.Text == "")
 			{
 				errorProvider1.SetError(txtGuardianMiddleName, "Required");
 				valid = false;
 			}
 
-			if (txtGuardianLastName.Text.Trim() == "")
+			if (txtGuardianLastName.Text == "")
 			{
 				errorProvider1.SetError(txtGuardianLastName, "Required");
 				valid = false;
 			}
 
-			if (txtGuardianRelationship.Text.Trim() == "")
+			if (txtGuardianRelationship.Text == "")
 			{
 				errorProvider1.SetError(txtGuardianRelationship, "Required");
 				valid = false;
 			}
 
-			if (txtGuardianContact.Text.Trim() == "")
+			if (txtGuardianContact.Text == "")
 			{
 				errorProvider1.SetError(txtGuardianContact, "Required");
 				valid = false;
 			}
 
-			if (txtGuardianEmail.Text.Trim() == "")
+			if (txtGuardianEmail.Text == "")
 			{
 				errorProvider1.SetError(txtGuardianEmail, "Required");
 				valid = false;

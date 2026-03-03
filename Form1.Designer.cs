@@ -50,6 +50,7 @@
 			this.txtEmail = new System.Windows.Forms.TextBox();
 			this.numAge = new System.Windows.Forms.NumericUpDown();
 			this.btnUpload = new System.Windows.Forms.Button();
+			this.picStudent = new System.Windows.Forms.PictureBox();
 			this.label14 = new System.Windows.Forms.Label();
 			this.txtStudentNumber = new System.Windows.Forms.TextBox();
 			this.rbFemale = new System.Windows.Forms.RadioButton();
@@ -62,20 +63,19 @@
 			this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
 			this.label15 = new System.Windows.Forms.Label();
 			this.panel4 = new System.Windows.Forms.Panel();
-			this.panel2 = new System.Windows.Forms.Panel();
-			this.dgvStudents = new System.Windows.Forms.DataGridView();
-			this.btnDelete = new System.Windows.Forms.Button();
 			this.btnClear = new System.Windows.Forms.Button();
+			this.btnDelete = new System.Windows.Forms.Button();
 			this.btnEdit = new System.Windows.Forms.Button();
 			this.btnSave = new System.Windows.Forms.Button();
-			this.picStudent = new System.Windows.Forms.PictureBox();
+			this.panel2 = new System.Windows.Forms.Panel();
+			this.dgvStudents = new System.Windows.Forms.DataGridView();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.numAge)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.picStudent)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
 			this.panel4.SuspendLayout();
 			this.panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.picStudent)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// btnNext
@@ -361,7 +361,6 @@
             0,
             0});
 			this.numAge.Name = "numAge";
-			this.numAge.ReadOnly = true;
 			this.numAge.Size = new System.Drawing.Size(117, 31);
 			this.numAge.TabIndex = 38;
 			// 
@@ -380,6 +379,16 @@
 			this.btnUpload.Text = "UPLOAD";
 			this.btnUpload.UseVisualStyleBackColor = false;
 			this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
+			// 
+			// picStudent
+			// 
+			this.picStudent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.picStudent.Location = new System.Drawing.Point(559, 255);
+			this.picStudent.Name = "picStudent";
+			this.picStudent.Size = new System.Drawing.Size(237, 172);
+			this.picStudent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.picStudent.TabIndex = 37;
+			this.picStudent.TabStop = false;
 			// 
 			// label14
 			// 
@@ -521,27 +530,22 @@
 			this.panel4.Size = new System.Drawing.Size(1002, 67);
 			this.panel4.TabIndex = 3;
 			// 
-			// panel2
+			// btnClear
 			// 
-			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(39)))), ((int)(((byte)(34)))));
-			this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel2.Controls.Add(this.label15);
-			this.panel2.Location = new System.Drawing.Point(30, 22);
-			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(1002, 59);
-			this.panel2.TabIndex = 2;
-			// 
-			// dgvStudents
-			// 
-			this.dgvStudents.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(230)))), ((int)(((byte)(207)))));
-			this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgvStudents.GridColor = System.Drawing.Color.SeaShell;
-			this.dgvStudents.Location = new System.Drawing.Point(30, 623);
-			this.dgvStudents.Name = "dgvStudents";
-			this.dgvStudents.RowHeadersWidth = 51;
-			this.dgvStudents.RowTemplate.Height = 35;
-			this.dgvStudents.Size = new System.Drawing.Size(1002, 201);
-			this.dgvStudents.TabIndex = 11;
+			this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(86)))), ((int)(((byte)(81)))));
+			this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(54)))), ((int)(((byte)(79)))));
+			this.btnClear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
+			this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnClear.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(213)))), ((int)(((byte)(169)))));
+			this.btnClear.Image = global::StudentInformationSystemFull.Properties.Resources.imgClear;
+			this.btnClear.Location = new System.Drawing.Point(438, 11);
+			this.btnClear.Name = "btnClear";
+			this.btnClear.Size = new System.Drawing.Size(131, 40);
+			this.btnClear.TabIndex = 6;
+			this.btnClear.Text = "Clear";
+			this.btnClear.UseVisualStyleBackColor = false;
+			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
 			// 
 			// btnDelete
 			// 
@@ -559,23 +563,6 @@
 			this.btnDelete.Text = "Delete";
 			this.btnDelete.UseVisualStyleBackColor = false;
 			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
-			// 
-			// btnClear
-			// 
-			this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(86)))), ((int)(((byte)(81)))));
-			this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(54)))), ((int)(((byte)(79)))));
-			this.btnClear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
-			this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnClear.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(213)))), ((int)(((byte)(169)))));
-			this.btnClear.Image = global::StudentInformationSystemFull.Properties.Resources.imgClear;
-			this.btnClear.Location = new System.Drawing.Point(438, 11);
-			this.btnClear.Name = "btnClear";
-			this.btnClear.Size = new System.Drawing.Size(131, 40);
-			this.btnClear.TabIndex = 6;
-			this.btnClear.Text = "Clear";
-			this.btnClear.UseVisualStyleBackColor = false;
-			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
 			// 
 			// btnEdit
 			// 
@@ -612,15 +599,27 @@
 			this.btnSave.UseVisualStyleBackColor = false;
 			this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
 			// 
-			// picStudent
+			// panel2
 			// 
-			this.picStudent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.picStudent.Location = new System.Drawing.Point(559, 255);
-			this.picStudent.Name = "picStudent";
-			this.picStudent.Size = new System.Drawing.Size(237, 172);
-			this.picStudent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.picStudent.TabIndex = 37;
-			this.picStudent.TabStop = false;
+			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(39)))), ((int)(((byte)(34)))));
+			this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.panel2.Controls.Add(this.label15);
+			this.panel2.Location = new System.Drawing.Point(30, 22);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(1002, 59);
+			this.panel2.TabIndex = 2;
+			// 
+			// dgvStudents
+			// 
+			this.dgvStudents.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(230)))), ((int)(((byte)(207)))));
+			this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgvStudents.GridColor = System.Drawing.Color.SeaShell;
+			this.dgvStudents.Location = new System.Drawing.Point(30, 623);
+			this.dgvStudents.Name = "dgvStudents";
+			this.dgvStudents.RowHeadersWidth = 51;
+			this.dgvStudents.RowTemplate.Height = 35;
+			this.dgvStudents.Size = new System.Drawing.Size(1002, 201);
+			this.dgvStudents.TabIndex = 11;
 			// 
 			// Form1
 			// 
@@ -640,12 +639,12 @@
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.numAge)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.picStudent)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
 			this.panel4.ResumeLayout(false);
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.picStudent)).EndInit();
 			this.ResumeLayout(false);
 
 		}

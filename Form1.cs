@@ -50,6 +50,15 @@ namespace StudentInformationSystemFull
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
+			// Disable copy/paste/right-click for restricted fields
+			txtFirstName.ShortcutsEnabled = false;
+			txtMiddleName.ShortcutsEnabled = false;
+			txtLastName.ShortcutsEnabled = false;
+			txtStudentNumber.ShortcutsEnabled = false;
+			txtReligion.ShortcutsEnabled = false;
+			txtPlaceOfBirth.ShortcutsEnabled = false;
+			txtMobileNumber.ShortcutsEnabled = false;
+
 			SetupColumns();
 			LoadGrid();
 
@@ -474,17 +483,17 @@ foreach (var s in studentRecords)
 				valid = false; 
 			}
 
-			if (txtMiddleName.Text.Trim() == "")
+			if (txtMiddleName.Text == "")
 			{ errorProvider1.SetError(txtMiddleName, "Required");
 				valid = false; 
 			}
 
-			if (txtLastName.Text.Trim() == "")
+			if (txtLastName.Text == "")
 			{ errorProvider1.SetError(txtLastName, "Required"); 
 				valid = false; 
 			}
 
-			if (txtStudentNumber.Text.Trim() == "")
+			if (txtStudentNumber.Text == "")
 			{ errorProvider1.SetError(txtStudentNumber, "Required"); 
 				valid = false; 
 			}
@@ -504,12 +513,12 @@ foreach (var s in studentRecords)
 				valid = false; 
 			}
 
-			if (txtReligion.Text.Trim() == "")
+			if (txtReligion.Text == "")
 			{ errorProvider1.SetError(txtReligion, "Required"); 
 				valid = false; 
 			}
 
-			if (txtPlaceOfBirth.Text.Trim() == "")
+			if (txtPlaceOfBirth.Text == "")
 			{ errorProvider1.SetError(txtPlaceOfBirth, "Required"); 
 				valid = false;
 			}
